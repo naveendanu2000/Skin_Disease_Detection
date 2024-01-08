@@ -1,0 +1,140 @@
+{% extends 'template.html' %}
+{% block prediction %}active{% endblock prediction %}
+{% block about %}{% endblock about %}
+{% block body %}
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="image" class="form-label">Choose Image</label>
+            <input class="form-control form-control-sm" name="image" id="image" type="file">
+        </div>
+        <div>
+            <label for="submit"></label>
+            <input class="btn btn-outline-primary" type="submit" value="upload" id="submit">
+        </div>
+    </form>
+    <br>
+    {{prediction_message}}
+    <br>
+    {{probability_message}}
+    <br>
+    <br>
+    <h1>{{predicted_label}}</h1>
+    <div id="Bacterial Infection - Cellulitis" style="display:none">
+        <p>Cellulitis is a common and potentially serious bacterial skin infection that affects the deeper layers of the skin and the tissues beneath it. It's characterized by redness, swelling, warmth, and pain in the affected area. The condition typically occurs due to a bacterial infection, most commonly caused by streptococcus or staphylococcus bacteria.</p>
+        Key characteristics of cellulitis include:
+        <ul>
+            <li>Skin Redness: The affected area often appears red and may expand over time.</li>
+            <li>Swelling: Swelling is common and may cause the skin to feel tight and tender.</li>
+            <li>Warmth and Pain: The affected area may feel warm to the touch and be painful or tender.</li>
+            <li>Skin Texture Changes: The skin may become shiny or have a pitted appearance.</li>
+            <li>Fever: In some cases, individuals may experience fever or chills if the infection is more severe or widespread.</li>
+        </ul>
+        <p>Cellulitis can occur on any part of the body but most commonly affects the legs, particularly the lower legs. It may occur after a break in the skin, such as a cut, scrape, or puncture wound, which allows bacteria to enter and cause infection. Other risk factors for developing cellulitis include having a weakened immune system, a history of skin conditions, or certain medical conditions like diabetes.</p>
+        <p>Treatment for cellulitis usually involves antibiotics to fight the bacterial infection. In severe cases or if complications arise, hospitalization may be necessary for intravenous antibiotics and monitoring.</p>
+        <p>Prompt medical attention is important for cellulitis, especially if symptoms worsen, if there are signs of spreading infection (red streaks), or if an individual experiences symptoms like high fever, severe pain, or difficulty moving the affected area.</p>
+    </div>
+    <div id="Bacterial Infection - Impetigo" style="display:none">
+        <p>Impetigo is a highly contagious bacterial skin infection primarily caused by Staphylococcus aureus (staph) or Streptococcus pyogenes (strep) bacteria. It's particularly common among children but can affect individuals of any age. Impetigo usually occurs when the skin's protective barrier is broken due to a cut, insect bite, or pre-existing skin condition, allowing bacteria to enter and cause an infection.</p>
+        Key characteristics of impetigo include:
+        <ul>
+            <li>Skin Lesions: The infection typically starts as red sores or blisters that burst and ooze fluid, forming a yellowish-brown crust over the affected area.</li>
+            <li>Itching: The sores may be itchy and spread to other parts of the body by scratching or through direct contact.</li>
+            <li>Rash: The rash often appears on the face, around the nose and mouth, but it can occur on other parts of the body as well.</li>
+        </ul>
+        There are two main types of impetigo:
+        <ul>
+            <li>Non-Bullous Impetigo: This is the most common type. It starts as small blisters that eventually burst and form honey-colored crusts. The affected area can be itchy and may spread slowly.</li>
+            <li>Bullous Impetigo: This less common form involves larger blisters that are filled with fluid and can be more resistant to treatment.</li>
+        </ul>
+        <p>Impetigo is highly contagious and can spread through direct contact with an infected person, touching contaminated objects, or through skin-to-skin contact. It's important to practice good hygiene, such as frequent handwashing, to prevent its spread.</p>
+        <p>Treatment for impetigo usually involves antibiotic creams or ointments for localized cases and oral antibiotics for more widespread or severe infections. It's essential to complete the full course of antibiotics as prescribed by a healthcare professional.</p>
+        <p>Prompt medical attention is advisable, especially if symptoms worsen, if there are signs of spreading infection, or if an individual experiences fever, swelling, or other concerning symptoms alongside the skin lesions.</p>
+    </div>
+    <div id="Fungal Infection - Athlete Foot" style="display:none">
+        <p>Athlete's foot, medically known as tinea pedis, is a fungal infection that affects the skin on the feet, particularly between the toes. It's a common condition caused by various types of fungi, including dermatophytes like Trichophyton.</p>
+        <p>
+            Key characteristics of athlete's foot include:
+            <ul>
+                <li>Itching: It often starts with itching and burning sensations between the toes, especially the spaces between the fourth and fifth toes.</li>
+                <li>Redness and Peeling: The affected skin may become red, inflamed, and start to peel or flake.</li>
+                <li>Cracked Skin: The skin may crack, and blisters or ulcers can develop in severe cases.</li>
+                <li>Odor: It can cause a strong odor due to bacterial infection or moisture buildup.</li>
+                <li>Spreading: The infection can spread to the soles of the feet and other areas if left untreated or due to scratching.</li>
+            </ul>
+        </p>
+        <p>Athlete's foot thrives in warm, moist environments, making it more common in individuals who frequently wear tight or poorly ventilated shoes, use communal showers or swimming pools, or have sweaty feet. It's also contagious and can spread through direct contact with an infected person or by sharing contaminated items such as towels, socks, or shoes.</p>
+        <p>Treatment for athlete's foot often includes antifungal medications available in various forms like creams, powders, or sprays. Over-the-counter (OTC) antifungal treatments may help for mild cases, but more severe or persistent infections might require prescription-strength antifungal medications.</p>
+        <p>Preventive measures include keeping the feet clean and dry, wearing breathable footwear, changing socks frequently, avoiding walking barefoot in public areas, and using antifungal powders or sprays in shoes to prevent recurrence.</p>
+        <p>Consulting a healthcare professional is advisable for an accurate diagnosis and appropriate treatment plan, especially if the symptoms are severe, persistent, or affecting multiple areas of the feet.</p>
+    </div>
+    <div id="Fungal Infection - Nail Fungus" style="display:none">
+        <p>
+            Nail fungus, also known as onychomycosis, is a common fungal infection that affects the toenails or fingernails. It occurs when fungi (usually dermatophytes, yeasts, or molds) invade the nail bed, causing the nails to become discolored, thickened, brittle, and distorted.
+        </p>
+            Common symptoms of nail fungus include:
+            <ul>
+                <li>Thickened or brittle nails</li>
+                <li>Yellow or white discoloration of the nails</li>
+                <li>Distorted nail shape</li>
+                <li>Crumbly or ragged nails</li>
+                <li>Nail that appears dull without luster</li>
+                <li>Pain or discomfort in the affected area in some cases</li>
+            </ul>
+        <p>Several risk factors increase the likelihood of developing nail fungus, such as wearing tight-fitting shoes, having a weakened immune system, poor circulation, frequent exposure to moist environments (like swimming pools or communal showers), aging, and having a history of nail trauma or skin conditions like athlete's foot.</p>
+        <p>Treatment for nail fungus can involve topical antifungal medications, oral antifungal medications prescribed by a doctor, or in severe cases, surgical removal of the nail. Over-the-counter treatments, home remedies (like tea tree oil or vinegar soaks), and lifestyle changes can sometimes help manage the infection, but persistent or severe cases might require professional medical intervention.</p>
+        <p>Preventive measures include keeping the feet clean and dry, wearing properly fitting shoes, changing socks regularly, avoiding walking barefoot in public places, and maintaining good foot hygiene to reduce the risk of developing nail fungus. Consulting a healthcare professional for proper diagnosis and treatment is recommended for anyone suspecting a nail fungus infection.</p>
+    </div>
+    <div id="Fungal Infection - Ringworm" style="display:none">
+        <p>Ringworm is a contagious fungal infection that causes a ring-like pattern on the skin. It's caused by mold-like parasites that live on the outer layer of the skin. Ringworm is most common in men and adolescent boys.</p>
+        Ringworm symptoms include:
+        <ul>
+            <li>Itchy skin</li>
+            <li>Ring-shaped rash</li>
+            <li>Red, scaly, cracked skin</li>
+            <li>Hair loss</li>
+        </ul>
+        <p>
+           Ringworm usually starts as an itchy red, brown, or gray rash where the leg and body meet. Over time, it may look like one or more rings with raised, bumpy, scaly borders. The skin may flake, peel, or crack, and it can itch, sting, burn, or feel uncomfortable.
+        </p>
+        <p>Ringworm is spread by direct, skin-to-skin contact with an infected person.
+        Ringworm can be treated with over-the-counter antifungals, such as miconazole (Cruex), clotrimazole (Desenex), and terbinafine (Lamisil). After cleaning the rash, apply a thin layer of antifungal medication to the affected area twice a day or as the package directs.</p>
+
+    </div>
+    <div id="PA - Cutaneous Larva Migrans" style="display:none">
+        <p>Cutaneous larva migrans (CLM) is a skin condition caused by the larvae of certain parasitic hookworms. The most common culprit is the dog and cat hookworms, specifically Ancylostoma braziliense and Ancylostoma caninum. These parasites typically infest dogs and cats, and humans can accidentally become hosts when the larvae come into contact with human skin.</p>
+        <p>CLM is characterized by red, raised, winding, itchy, and serpentine (snake-like) tracks or lines on the skin. The rash appears as the larvae of the hookworm burrow into the top layers of the skin, usually the feet, buttocks, or other exposed areas. The itching and discomfort can be quite intense, leading to scratching and potential secondary infections.</p>
+        <p>The condition gets its name "larva migrans" because the larvae migrate and move beneath the skin, causing the characteristic winding tracks as they travel. It's more commonly found in tropical and subtropical regions but can occur in other parts of the world as well.</p>
+        <p>CLM is typically acquired when a person comes into contact with contaminated soil or sand where infected animals (particularly dogs and cats) have defecated. Walking barefoot or sitting on infected soil or sand can allow the larvae to penetrate the skin.</p>
+        <p>Treatment for cutaneous larva migrans usually involves topical application of prescribed medications like thiabendazole or albendazole. These medications help kill the larvae and relieve symptoms. Additionally, antihistamines may be recommended to alleviate itching.</p>
+        <p>Prevention measures include wearing shoes in areas where there might be contaminated soil, avoiding contact with animal feces, regularly cleaning pet living areas, and practicing good hygiene after potential exposure to soil or sand where infected animals may have been. If symptoms of CLM appear, seeking medical attention is advisable to confirm the diagnosis and receive appropriate treatment.</p>
+    </div>
+    <div id="Viral Infection - Chickenpox" style="display:none">
+        <p>Chickenpox is a highly contagious viral infection caused by the varicella-zoster virus (VZV). It primarily affects children but can also occur in adults who have not been previously infected or vaccinated against the virus.</p>
+        Here are some key points about chickenpox:
+        <ul>
+            <li>Transmission: It spreads through respiratory droplets or direct contact with the fluid from the blisters of an infected person. The virus is contagious from about 1-2 days before the appearance of the rash until all the blisters have crusted over (usually about 5-7 days after the rash appears).</li>
+            <li>Symptoms: The infection typically starts with a fever, headache, and loss of appetite. A few days later, a rash appears, beginning as small red spots that turn into fluid-filled blisters. These blisters can cover the entire body and may be itchy. Other symptoms might include fatigue and general discomfort.</li>
+            <li>Complications: While chickenpox is usually a mild illness, it can lead to complications, especially in certain high-risk groups such as newborns, pregnant women, and individuals with weakened immune systems. Complications might include bacterial infections of the skin, pneumonia, encephalitis (inflammation of the brain), or, rarely, severe complications like blood or neurological disorders.</li>
+            <li>Treatment: In most cases, treatment involves managing symptoms to make the infected person more comfortable. This might include over-the-counter pain relievers for fever and discomfort, as well as calamine lotion or antihistamines to relieve itching. It's crucial to avoid scratching the blisters to prevent infection and scarring.</li>
+            <li>Prevention: The best way to prevent chickenpox is through vaccination. The varicella vaccine is highly effective and is routinely recommended for children. A second dose is often given to provide further protection. Vaccination not only reduces the risk of getting chickenpox but also lessens the severity of the illness if infection occurs.</li>
+            <li>Immunity: Having chickenpox usually provides lifelong immunity against the virus. However, the virus remains in the body and can reactivate later in life, causing a different condition called shingles (herpes zoster).</li>
+        </ul>
+        <p>If you or someone you know suspects they have chickenpox, it's essential to seek medical advice, especially if you fall into a high-risk group or if the symptoms are severe. Additionally, practicing good hygiene, such as frequent handwashing, can help prevent the spread of the virus.</p>
+    </div>
+    <div id="Viral Infection - Shingles" style="display:none">
+        <p>Shingles, also known as herpes zoster, is a viral infection caused by the varicella-zoster virus (VZV), the same virus that causes chickenpox. After a person recovers from chickenpox, the virus remains dormant in the nerve tissues near the spinal cord and brain. Later in life, under certain conditions, the virus can reactivate and cause shingles.</p>
+        <p>The reactivation of the varicella-zoster virus typically occurs in individuals with a weakened immune system due to factors such as aging, stress, illness, or certain medications. However, shingles can occur in anyone who has had chickenpox.</p>
+        <p>The primary symptom of shingles is a painful, blistering rash that usually appears on one side of the body, often in a band-like or belt-like pattern along a nerve pathway. This rash can be accompanied by itching, tingling, burning sensations, and sensitivity to touch. Before the rash develops, some individuals may experience flu-like symptoms such as fever, headache, and fatigue.</p>
+        <p>The rash typically progresses through stages, starting with red patches that develop into fluid-filled blisters. Over a few days, the blisters will crust over and eventually heal. The duration of the rash can last several weeks, and in some cases, there might be persistent pain even after the rash has disappeared. This lingering pain is known as postherpetic neuralgia and can be severe and debilitating for some individuals.</p>
+        <p>Shingles is contagious to individuals who have not had chickenpox before but instead of contracting shingles, they might develop chickenpox if they come into contact with the fluid from the blisters of someone with shingles.</p>
+        <p>There is a vaccine available for the prevention of shingles called the shingles vaccine or herpes zoster vaccine. The vaccine is recommended for adults over a certain age, especially those aged 50 and older, to reduce the risk of developing shingles or to decrease the severity of symptoms if the infection occurs.</p>
+        <p>Treatment for shingles often involves antiviral medications to help reduce the duration and severity of the illness. Additionally, pain relievers, calamine lotion, and cool compresses may be used to alleviate discomfort associated with the rash. Seeking prompt medical attention and following a healthcare professional's advice is crucial for managing shingles effectively.</p>
+    </div>
+
+
+    <script>
+        document.getElementById('{{predicted_label}}').style.display='block';
+    </script>
+
+{% endblock body %}

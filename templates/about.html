@@ -1,0 +1,40 @@
+{% extends 'template.html' %}
+{% block prediction %}{% endblock prediction %}
+{% block about %}active{% endblock about %}
+{% block body %}
+    <br>
+    <h1>About the App</h1>
+    <p>The web application harnesses the power of Convolutional Neural Network (CNN) technology to provide users with an innovative platform for detecting various skin diseases. By uploading images of skin lesions or affected areas, users can avail themselves of an accurate and rapid diagnosis. Leveraging advanced deep learning techniques, the CNN model within the web app analyzes the uploaded images, extracting intricate patterns and features crucial for identifying a wide spectrum of skin conditions, including but not limited to Cutaneous larva migrans, Ringworm, Chickenpox, and more. The user-friendly interface facilitates easy image submission, and within moments, the app provides users with insights, suggesting potential skin diseases based on the neural network's analysis. This application not only offers a preliminary assessment of skin ailments but also serves as an educational tool, empowering individuals with information to seek timely medical guidance and care from dermatologists or healthcare professionals for further evaluation and treatment.</p>
+
+    <h1>About the Model</h1>
+    <p>
+        The CNN (Convolutional Neural Network) model used in the provided code utilizes the pre-trained ResNet50 architecture as a base model. ResNet50 is a deep neural network architecture known for its depth and performance in image classification tasks. Here's an overview of the model's construction and flow:
+        <ul>
+            <li>Data Preparation:
+                Image data is loaded from the 'skin-disease-datasaet\train_set' directory and split into training and validation datasets.
+                Images are resized to a shape of (224, 224) pixels using OpenCV (cv2).
+            </li>
+            <li>Base Model (ResNet50):
+                The pre-trained ResNet50 model is loaded with weights pre-trained on the ImageNet dataset. This model is imported from Keras' applications and set to exclude the top classification layer (include_top=False).
+                The base model is set to non-trainable (base_model.trainable = False) to retain the pre-trained weights and prevent further training on these layers.
+            </li>
+            <li>Custom Classification Head:
+                Global Average Pooling: A GlobalAveragePooling2D layer is added to reduce spatial dimensions and summarize the output from the base model.
+                Dense Layers: A Dense layer with 512 units and ReLU activation is added for feature extraction followed by another Dense layer with 'num_classes' units (8 in this case) and a softmax activation for multi-class classification.
+            </li>
+            <li>Model Compilation:
+                The model is compiled using the 'adam' optimizer and 'categorical_crossentropy' loss function for training. Metrics such as accuracy are tracked during training.
+            </li>
+<!--            <li>Data Preprocessing:-->
+<!--                Input data (both training and validation sets) are preprocessed using preprocess_input from ResNet50 to align with the preprocessing applied during the model's pre-training.-->
+<!--            </li>-->
+<!--            <li>Training:-->
+<!--                The model is trained using the preprocessed training data (X_train) and corresponding labels (y_train_one_hot). Validation data (X_val, y_val_one_hot) are used for validation during training.-->
+<!--                Training is conducted for a specified number of epochs (EPOCHS) and a defined batch size (BATCH_SIZE).</li>-->
+<!--            <li>Model Saving:-->
+<!--                Once trained, the model is saved to a file named 'skin_disease.h5' using model.save().-->
+<!--                This CNN architecture harnesses the ResNet50 pre-trained model's deep convolutional layers to learn meaningful features from skin disease images and then performs fine-tuning through additional dense layers for classification into eight different classes (num_classes=8). The model undergoes supervised learning to optimize weights for accurate skin disease classification.-->
+<!--            </li>-->
+        </ul>
+    </p>
+{% endblock body %}
