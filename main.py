@@ -75,9 +75,34 @@ y_train_one_hot = to_categorical(y_train_encoded, num_classes)
 y_val_one_hot = to_categorical(y_val_encoded, num_classes)
 # le.classes_
 
-EPOCHS = 40
+EPOCHS = 10
 BATCH_SIZE = 32
 history = model.fit(X_train, y_train_one_hot, validation_data=(X_val, y_val_one_hot),
                     epochs=EPOCHS, batch_size=BATCH_SIZE)
 
-model.save('skin_disease.h5')
+data_path = 'skin-disease-datasaet\\test_set'
+test_data = []
+test_images = []
+test_labels = []
+
+for folder in os.listdir(data_path):
+    folder_path = os.path.join(data_path, folder)
+    file = os.listdir(folder_path)
+    files_test = list(file)
+
+    for file in files_test:
+        file_path = os.path.join(folder_path, file)
+        img = cv2.imread(file_path)
+        img = cv2.resize(img, (224, 224))
+        test_data.append((img, folder))
+
+test_data = [(preprocess_input(input), label) for input, label in test_data]
+
+test_images, test_labels = zip(*test_data)
+X_test = preprocess_input(np.array(test_images))
+Y_test_encoded = le.fit_transform(test_labels)
+Y_test_one_hot = to_categorical(Y_test_encoded, num_classes)
+
+test_loss, test_accuracy = model.evaluate(X_test, Y_test_one_hot)
+
+# model.save('skin_disease.h5')
