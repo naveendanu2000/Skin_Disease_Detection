@@ -24,4 +24,7 @@ by uploading the image of skin lesions the app can detect skin infection with hi
 Web App:
 ![Prediction](https://github.com/naveendanu2000/Skin_Disease_Detection/assets/125803858/642b49d3-8f8a-4b41-a51a-af7e402102bd)
 
-![Prediction](https://github.com/naveendanu2000/Skin_Disease_Detection/assets/125803858/7e4e6836-d182-431c-a7b5-95471a256704)
+
+
+![about](https://github.com/naveendanu2000/Skin_Disease_Detection/assets/125803858/57994caa-fdce-4f17-a45b-9b757dd88db6)
+
